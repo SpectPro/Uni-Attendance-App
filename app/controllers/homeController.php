@@ -1,7 +1,6 @@
 <?php
 
 require_once '../app/core/controller.php';
-// require_once 'announcementController.php';
 
 class homeController extends controller{
 

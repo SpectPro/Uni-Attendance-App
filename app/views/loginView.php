@@ -1,333 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="../../public/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-      classorigin = "anonymous"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
     />
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js" 
-    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
-    crossorigin="anonymous"></script>
-<style>
-*{
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-body{
-  background-image: url(../img/bg_3.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.box{
-  background-color:rgb(255, 255, 255);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-radius: 5px;
-  border: gray solid 1px;
-  height:100%;
-  width:90%;
-  margin: 5%;
-}
-nav{
-  margin: 0;
-}
-nav ul{
-  float: right;
-}
-.header{
-  grid-column-start: 2;
-  font-weight:5px; 
-  font-size: 20px;
-}
-nav ul li{
-  list-style: none;
-  display: inline-block;
-  padding: 30px 20px ;
-}
-nav ul li a{
-  text-decoration: none;
-  color: black;   
-}
-nav ul li a:hover{
-  font-weight:bold;  
-}
-.box .header nav ul li button{
-  border-radius: 20px;
-  background-color: #211a49;
-  border-style: none;
-  padding:8px 40px ;
-  font-size: 15px;
-  font-weight:5px;  
-}
-.box .header nav ul li button span{
-  color: white;
-}
-
-#apartment{
-
-  width: 450px;
-  height: 400px;
-  margin-left:120px;
-  /* border-radius:20%; */
-  /* grid-column: 1 split/2; */
-}
-
-
-.footer{
-	height: 25px;
-  width:100%;
-  background:linear-gradient(to right,#211a49,#927ffc);
-	text-align: center;
-	font-size: 10px;
-	padding-top: 20px;
-}
-.centre{
-   align-items: center;
-}
-
-
-.signin_container{
-    grid-column:2;
-    height: 450px;
-}
-.signin_container form {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 5rem;
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-}
-
-.title{  
-    margin-top: 40px; 
-    font-family: Arial;
-    font-size: 30px;
-}
-
-.error_form {
-    margin-top: 3px;
-    margin-left: 40px;
-    font-family: Arial;
-    font-size: 13px;
-    color: #ff0808;
-    width: 250px;
-}
-
-.input-field{
-    margin: 0px;
-    width: 300px;
-    height: 55px;
-    background-color: #f0f0f0;
-    margin: 20px 0px;
-    border-radius: 55px;
-    display: grid;
-    grid-template-columns: 15% 85%;
-    padding: 0 0.4rem;
-    position: relative;
-}
-
-.input-field i{
-    padding: 13px;
-    text-align: center;
-    line-height: 25px;
-    color: #acacac;
-    font-size: 1.5rem;
-}
-
-.input-field input{
-    background: none;
-    outline: none;
-    border: solid 0px;
-    line-height: 1;
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: #333; 
-}
-
-.input-field input:placeholder-shown{
-    
-    color: rgb(43, 36, 36);
-    font-weight: 500;
-    border: none;
-    background: none;
-    outline: none;
-}
-
-input[type=text] , input[type=password]{
-    width: 100%;
-    padding: 10px 15px;
-    margin: 8px 5px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    border: none;
-    box-sizing: border-box;
-}
-input[type=submit] {
-    width: 100px;
-    background-color: #2a225a;
-    color: white;
-    padding: 5px 0px;
-    margin: 10px 30px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    grid-column: 3;
-}
-input[type=submit]:hover {
-    background-color: #02000c;
-}
-
-label{
-    margin-left: 5px;
-}
-
-/* responsive */
-@media(max-width:1200px) {
-  .box{
-      
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }  
-
-  nav{
-  margin: 0;
-}
-nav ul{
-  float: right;
-}
-.header{
-  grid-column-start: 3;
-  font-weight:5px; 
-  font-size: 20px;
-}
-nav ul li{
-  list-style: none;
-  display: inline-block;
-  padding: 30px 20px ;
-}
-nav ul li a{
-  text-decoration: none;
-  color: black;   
-}
-nav ul li a:hover{
-  font-weight:bold;  
-}
-.box .header nav ul li button{
-  border-radius: 20px;
-  background-color: #211a49;
-  border-style: none;
-  padding:8px 40px ;
-  font-size: 15px;
-  font-weight:5px;  
-}
-.box .header nav ul li button span{
-  color: white;
-}
-  .header{
-    font-size: 15px;
-  }
-  
-  #apartment{
-      position: relative;
-      margin:0px;
-      opacity: 50%;
-    width: 100%;
-    height:100%;
-    object-fit: cover;
-    
-  }
-
-  .signin_container{
-      position: absolute;
-    grid-column:1 split/3;
-    height: 450px;
-}
-
-.title{  
-    margin-top: 140px; 
-    font-family: Arial;
-    font-size: 30px;
-}
-  
-  .box .header nav ul li button{
-    border-radius: 20px;
-    padding:8px 30px ;
-    font-size: 15px;
-    font-weight: bold;  
-  }
-}
-
-
-</style>
-</head>
-<body>
-  <div class="center">
-    <div class="box">
-        <div class="header">     
-        <nav>
-        <ul>
-            <li><a href="#">Map</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><button><a href="home"><span>Home</span></a></button></li>
-        </ul>
-        </nav>
-        </div>
-        <div>
-            <center><img src="../../public/img/21.jpg" id="apartment"></center>
-        </div>
-
-        <div class="signin_container">
-            <div class="title"><center>SignIn</center></div>
-            <div class="signup">
-                
-                <form action="loginSuccess" class="sign-in-form" method= "POST">
-
-                     <div class="input-field" id ="nameId">
-                        <i class="fas fa-user"></i>
-                        <input id="form_name" class="name" type="text" placeholder="Username" name= "name" autofocus required>
-                        <br>
-                        <span class="error_form" id="name_error_message"></span>
-                    </div>
-
-                    
-
-                    <div class="input-field" id ="passwordId">
-                        <i class="fas fa-lock"></i>
-                        <input id="form_password" type="password" placeholder="password" name = "password" required>
-                        <br>
-                        <span class="error_form" id="password_error_message"></span>
-                    </div>
-
-                    <input type="submit" class="btn solid" value="Sign In"/> 
-                    
-                </form>
-                <div><center>Forgot Password <a href="#">Reset Password</a></center></div>
-            
-            </div> 
-        
-     
-        </div>
-        
-  </div>
-  
-  <div class="footer">
-      <p>&COPY;  2021,All rights reserved by Hawlock City</p>
-  </div>
-  
-  <script type="text/javascript" src="../../public/js/login.js"></script>
-</body>
+  </head>
+  <body>
+    <div
+      class="container-fluid"
+      style="
+        min-height: 100vh;
+        background-color: #90baa0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div
+        class="container"
+        style="
+          width: 900px;
+          height: 600px;
+          background-color: #f9f9f9;
+          border-radius: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <form class="form" style="width: 350px">
+          <div class="row mb-4">
+            <div class="col text-center">
+              <h1>LOGIN</h1>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col">
+              <select
+                class="form-select form-select-lg"
+                aria-label=".form-select-lg example"
+              >
+                <option selected>Login as</option>
+                <option>Admin</option>
+                <option>Lecture</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col">
+              <div class="input-group input-group-lg">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Username"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col">
+              <div class="input-group input-group-lg">
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Password"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col text-center">
+              <h6>Forget Password?</h6>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="d-grid gap-2 col-6 mx-auto col text-center">
+              <button type="submit" href="home" class="btn btn-secondary btn-lg">
+                LOGIN
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+      integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+      integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Form validation
+      const form = document.querySelector(".form");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const username = document.querySelector('input[type="text"]').value;
+        const password = document.querySelector('input[type="password"]').value;
+        if (username.trim() === "" || password.trim() === "") {
+          alert("Please enter a username and password.");
+        } else {
+          alert("Form submitted successfully!");
+          // Additional validation or form submission logic can be added here
+        }
+      });
+    </script>
+  </body>
 </html>
