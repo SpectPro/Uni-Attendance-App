@@ -1,178 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="../../public/css/style.css">
-<style>
-*{
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-body{
-  background-image: url(../img/bg_3.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.box{
-  background-color:rgb(255, 255, 255);
-  display: grid;
-  grid-template-columns: 200px 1fr 1fr;
-  border-radius: 5px;
-  border: gray solid 1px;
-  height:100%;
-  width:90%;
-  margin: 5%;
-}
-nav{
-  margin: 0;
-}
-nav ul{
-  float: right;
-}
-.header{
-  grid-column-start: 3;
-  font-weight:5px; 
-  font-size: 20px;
-}
-nav ul li{
-  list-style: none;
-  display: inline-block;
-  padding: 30px 20px ;
-}
-nav ul li a{
-  text-decoration: none;
-  color: black;   
-}
-nav ul li a:hover{
-  font-weight:bold;  
-}
-.box .header nav ul li button{
-  border-radius: 20px;
-  background-color: #211a49;
-  border-style: none;
-  padding:8px 40px ;
-  font-size: 15px;
-  font-weight:5px;  
-}
-.box .header nav ul li button span{
-  color: white;
-}
-#logo{
-  grid-column-start: 1;
-  height: 200px;
-  width: 200px;
-  object-fit: cover;
-  grid-row-start: 2;
-  margin-left: 50px;
-}
-#title{
-  color: #2a225a;
-  font-size: 50px;
-  grid-row-start: 2;
-  margin-top: 70px;
-}
-#city{
-  font-weight: lighter;
-}
-#ALSS{
-  font-size:40px ;
-  grid-column: 1/span 2;
-  margin-left: 100px;
-}
-#mission{
-  font-size:10px;
-  font-weight: bold;
-}
-#apartment{
-  width: 400px;
-  height: 250px;
-  margin:50px;
-  grid-row: 2/span 3;
-}
-#content{
-  font-size: 15px;
-  margin: 100px;
-  margin-top: 0;
-  grid-column: 1/span 2;
-}
-.footer{
-	height: 25px;
-  width:100%;
-  background:linear-gradient(to right,#211a49,#927ffc);
-	text-align: center;
-	font-size: 10px;
-	padding-top: 20px;
-}
-.centre{
-   align-items: center;
-}
-/* responsive */
-@media(max-width:1260px) {
-  .box{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }  
-  #logo{
-    height: 150px;
-    width: 150px;
-    margin:-30px;
-      } 
-  #title{
-    font-size: 40px;
-    margin-top: 0;
-  }
-  #ALSS{
-    margin: 0;
-    font-size: 30px;
-  }
-  nav ul li{
-    padding: 10px 15px ;
-  }
-  .header{
-    font-size: 15px;
-  }
-  #apartment{
-    width: 300px;
-    height: 175px;
-    margin-top:10px;
-  }
-  #content{
-    margin: 10px 50px;
-  }
-  .box .header nav ul li button{
-    border-radius: 20px;
-    padding:8px 30px ;
-    font-size: 15px;
-    font-weight: bold;  
-  }
-}
-</style>
-</head>
-<body>
-  <div class="center">
-    <div class="box">
-    <div class="header">     
-    <nav>
-      <ul>
-        <li><a href="#">Map</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li><button><a href="login"><span>LOGIN</span></a></button></li>
-      </ul>
-    </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="d-flex">
+        <div class="bg-dark p-3" style="width: 20%; height: 100vh;">
+            <img src="../../public/img/logo.png" alt="Logo" class="img-fluid mb-3" />
+            <h1 class="text-center text-light">
+              Welcome </br>to </br>University Attendance System
+            </h1>
+        </div>
+        <div class="d-flex justify-content-center align-items-center " style="width:80%; height: 100vh;">
+            <div class="m-5 img-fluid d-flex justify-content-center align-items-center flex-column" style="
+            height: 90%;
+            width: 90%;
+            background-image: url('../../public/img/students_bg.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 80%;
+            border-radius: 20px;
+          ">
+            <a href="login" class="bg-dark-subtle mb-4 p-2 d-flex flex-row justify-content-center align-items-center" 
+            style="text-decoration: none; background: #CCCFC7;
+            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 10px; width: 450px;">
+                <img src="../../public/img/icon_1.png" class="img-fluid mx-2 mb-2 mt-2">
+                <h3 class="text-dark mx-2">View Attendance Report</h3>
+            </a>
+            <a href="http://dsfs" class="bg-dark-subtle p-2 d-flex flex-row justify-content-center align-items-center" 
+            style="text-decoration: none; background: #CCCFC7;
+            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 10px; width: 450px;">
+                <img src="../../public/img/icon_2.png" class="img-fluid me-5 mb-2 mt-2">
+                <h3 class="text-dark  ms-5 me-5">Student Details</h3>
+            </a>
+            </div>
+        </div>
     </div>
-      <img src="../../public/img/image.png" alt="" id="logo"/>
-      <h1 id="title">Hawlock <span id="city">City</span></h1>
-      <img src="../../public/img/1.jpg" id="apartment">
-      <p id="ALSS">Apartment Life</br> Support System<span id="mission"><br>Make Your Life Easier</span><br><p id ="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti unde mollitia, repudiandae </p></p>        
-    </div>
-  </div>
-  <div class="footer">
-      <p>&COPY;  2021,All rights reserved by Hawlock City</p>
-  </div>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+      integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
