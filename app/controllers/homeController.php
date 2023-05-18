@@ -68,7 +68,12 @@ class homeController extends controller
 
     public function attendanceReport()
     {
-        $this->view->attendanceReport = $this->model->readAttendanceReport($_GET['id']);
+
+        $id = $_GET['id'];
+
+        $this->loadModel('attendanceReportModel');
+
+        $this->view->attendanceReport = $this->model->readAttendanceReport($id);
         $this->view->render('attendanceReportView');
     }
 

@@ -4,7 +4,16 @@ if (!isset($_SESSION['userId'])) {
   header('location:/Uni-Attendance-App/public/homeController/login');
   die;
 }
+
 ?>
+
+<?php
+while ($row = $this->attendanceReport->fetch_assoc()) {
+  print_r($row);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -153,8 +162,8 @@ if (!isset($_SESSION['userId'])) {
       type: "doughnut",
       data: {
         datasets: [{
-          label: "# of Votes",
-          data: [12, 19, 3],
+          label: ["Students"],
+          data: [12, 19, ],
         }, ],
       },
       options: {
