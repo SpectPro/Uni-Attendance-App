@@ -22,4 +22,31 @@ class homeController extends controller{
     public function login(){
         $this->view->render('loginView');
     }
+
+    public function loginSuccess(){
+        $username = $_POST ['username'];
+        $password=$_POST ['password'];
+
+        $this->loadModel('loginModel');
+
+        $this->view->ann = $this->model->readLogin($username, $password);
+        if($_SESSION['type']=='admin'){
+            $this->view->render('homeView');
+        }
+        else if($_SESSION['type']=='lecture'){
+            $this->view->render('homeView');
+        }
+    }
+
+    public function attendanceReport(){
+        $this->view->render('attendanceReportView');
+    }
+
+    public function studentDetails(){
+        $this->view->render('studentDetailsView');
+    }
+
+    public function student(){
+        $this->view->render('studentView');
+    }
 }

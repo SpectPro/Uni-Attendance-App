@@ -35,7 +35,7 @@
           align-items: center;
         "
       >
-        <form class="form" style="width: 350px">
+        <form action="loginSuccess" method="POST" class="form" style="width: 350px">
           <div class="row mb-4">
             <div class="col text-center">
               <h1>LOGIN</h1>
@@ -47,7 +47,7 @@
                 class="form-select form-select-lg"
                 aria-label=".form-select-lg example"
               >
-                <option selected>Login as</option>
+                <option selected>Login As</option>
                 <option>Admin</option>
                 <option>Lecture</option>
               </select>
@@ -58,6 +58,7 @@
               <div class="input-group input-group-lg">
                 <input
                   type="text"
+                  name="username"
                   class="form-control"
                   placeholder="Username"
                 />
@@ -69,6 +70,7 @@
               <div class="input-group input-group-lg">
                 <input
                   type="password"
+                  name="password"
                   class="form-control"
                   placeholder="Password"
                 />
@@ -82,7 +84,7 @@
           </div>
           <div class="row mt-4">
             <div class="d-grid gap-2 col-6 mx-auto col text-center">
-              <button type="submit" href="home" class="btn btn-secondary btn-lg">
+              <button type="submit" href="loginSuccess" class="btn btn-secondary btn-lg">
                 LOGIN
               </button>
             </div>
@@ -107,18 +109,18 @@
     ></script>
     <script>
       // Form validation
-      const form = document.querySelector(".form");
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        const username = document.querySelector('input[type="text"]').value;
-        const password = document.querySelector('input[type="password"]').value;
-        if (username.trim() === "" || password.trim() === "") {
-          alert("Please enter a username and password.");
-        } else {
-          alert("Form submitted successfully!");
-          // Additional validation or form submission logic can be added here
-        }
-      });
+      // const form = document.querySelector(".form");
+      // form.addEventListener("submit", function (event) {
+      //   event.preventDefault();
+      //   const username = document.querySelector('input[type="text"]').value;
+      //   const password = document.querySelector('input[type="password"]').value;
+      //   if (username.trim() === "" || password.trim() === "") {
+      //     alert("Please enter a username and password.");
+      //   } else {
+      //     alert("Form submitted successfully!");
+      //     // Additional validation or form submission logic can be added here
+      //   }
+      // });
     </script>
   </body>
 </html>

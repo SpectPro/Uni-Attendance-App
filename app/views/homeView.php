@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Page</title>
+    <title>Home Page</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -30,14 +30,14 @@
             opacity: 80%;
             border-radius: 20px;
           ">
-            <a href="login" class="bg-dark-subtle mb-4 p-2 d-flex flex-row justify-content-center align-items-center" 
+            <a href="attendanceReport" class="bg-dark-subtle mb-4 p-2 d-flex flex-row justify-content-center align-items-center" 
             style="text-decoration: none; background: #CCCFC7;
             box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 10px; width: 450px;">
                 <img src="../../public/img/icon_1.png" class="img-fluid mx-2 mb-2 mt-2">
                 <h3 class="text-dark mx-2">View Attendance Report</h3>
             </a>
-            <a href="http://dsfs" class="bg-dark-subtle p-2 d-flex flex-row justify-content-center align-items-center" 
+            <a href="studentDetails" class="bg-dark-subtle p-2 d-flex flex-row justify-content-center align-items-center" 
             style="text-decoration: none; background: #CCCFC7;
             box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 10px; width: 450px;">
