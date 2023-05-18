@@ -5,6 +5,17 @@ if (!isset($_SESSION['userId'])) {
   die;
 }
 
+ $count = $this->attendanceReport[1]->fetch_assoc();
+ $array = $count;
+ $count1 = $array["COUNT(id)"];
+ print_r($count1);
+
+ $count = $this->attendanceReport[2]->fetch_assoc();
+ $array = $count;
+ $count2 = $array["late_student_count"];
+ print_r($count2);
+
+
 ?>
 
 
@@ -45,15 +56,22 @@ if (!isset($_SESSION['userId'])) {
         <div class="row align-items-start gap-4">
           <div class="col bg-light" style="border-radius: 15px; height: 200px">
             <h2 class="mt-4">Total Number of Students</h2>
-            <h1 class="mt-3">200</h1>
+            <h1 class="mt-3"><?php
+                     echo $count1;
+                            ?>
+                    </h1>
           </div>
           <div class="col bg-light" style="border-radius: 15px; height: 200px">
             <h2 class="mt-5">On Time</h2>
-            <h1 class="mt-3">120</h1>
+            <h1 class="mt-3"><?php
+                     echo $count1-$count2;
+                            ?></h1>
           </div>
           <div class="col bg-light" style="border-radius: 15px; height: 200px">
             <h2 class="mt-5">Late</h2>
-            <h1 class="mt-3">20</h1>
+            <h1 class="mt-3"><?php
+                     echo $count2;
+                            ?></h1>
           </div>
           <div class="col bg-light" style="border-radius: 15px; height: 200px">
             <h3>Avarage</h3>
@@ -66,6 +84,8 @@ if (!isset($_SESSION['userId'])) {
         <div class="row bg-light p-5 mt-5" style="border-radius: 15px">
           <table class="table h-75">
             <thead>
+
+
               <tr class="table-dark">
                 <th scope="col">Student ID</th>
                 <th scope="col">Name</th>
@@ -77,69 +97,24 @@ if (!isset($_SESSION['userId'])) {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">19345</th>
-                <td>Anthony</td>
-                <td>Computing</td>
-                <td>Present</td>
-                <td>IT</td>
-                <td>1.23 pm</td>
-                <td>5.02 pm</td>
+
+            <?php
+                    if ($this->attendanceReport[0]->num_rows > 0) {
+                        while ($row = $this->attendanceReport[0]->fetch_assoc()) { ?>
+                            <tr>
+                <th scope="row"><?php echo $row["id"]; ?></th>
+                <td><?php echo $row["name"]; ?></td>
+                <td><?php echo $row["department"]; ?></td>
+                <td><?php echo $row["status"]; ?></td>
+                <td><?php echo $row["degree_program"]; ?></td>
+                <td><?php echo $row["time_inn"]; ?></td>
+                <td><?php echo $row["time_out"]; ?></td>
               </tr>
-              <tr>
-                <th scope="row">19345</th>
-                <td>Anthony</td>
-                <td>Computing</td>
-                <td>Present</td>
-                <td>IT</td>
-                <td>1.23 pm</td>
-                <td>5.02 pm</td>
-              </tr>
-              <tr>
-                <th scope="row">19345</th>
-                <td>Anthony</td>
-                <td>Computing</td>
-                <td>Present</td>
-                <td>IT</td>
-                <td>1.23 pm</td>
-                <td>5.02 pm</td>
-              </tr>
-              <tr>
-                <th scope="row">19345</th>
-                <td>Anthony</td>
-                <td>Computing</td>
-                <td>Present</td>
-                <td>IT</td>
-                <td>1.23 pm</td>
-                <td>5.02 pm</td>
-              </tr>
-              <tr>
-                <th scope="row">19345</th>
-                <td>Anthony</td>
-                <td>Computing</td>
-                <td>Present</td>
-                <td>IT</td>
-                <td>1.23 pm</td>
-                <td>5.02 pm</td>
-              </tr>
-              <tr>
-                <th scope="row">19345</th>
-                <td>Anthony</td>
-                <td>Computing</td>
-                <td>Present</td>
-                <td>IT</td>
-                <td>1.23 pm</td>
-                <td>5.02 pm</td>
-              </tr>
-              <tr>
-                <th scope="row">19345</th>
-                <td>Anthony</td>
-                <td>Computing</td>
-                <td>Present</td>
-                <td>IT</td>
-                <td>1.23 pm</td>
-                <td>5.02 pm</td>
-              </tr>
+                    <?php
+                        }
+                    } else {
+                    }
+                    ?>
             </tbody>
           </table>
         </div>
@@ -157,7 +132,11 @@ if (!isset($_SESSION['userId'])) {
       data: {
         datasets: [{
           label: ["Students"],
-          data: [12, 19, ],
+          data: [<?php
+                     echo $count1-$count2;
+                            ?>, <?php
+                            echo $count2;
+                                   ?>, ],
         }, ],
       },
       options: {
