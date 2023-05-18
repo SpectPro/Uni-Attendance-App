@@ -2,49 +2,55 @@
 
 require_once '../app/core/controller.php';
 
-class homeController extends controller{
+class homeController extends controller
+{
 
-    function __construct(){
+    function __construct()
+    {
         parent::__construct();
     }
 
-    public function index(){
+    public function index()
+    {
         $this->view->render('404errorView');
     }
 
-    public function home(){
+    public function home()
+    {
         $this->loadModel('homeModel');
         $this->view->users = $this->model->readTable();
         $this->view->render('homeView');
     }
-    
 
-    public function login(){
+
+    public function login()
+    {
         $this->view->render('loginView');
     }
 
-    public function loginSuccess(){
-        $username = $_POST ['username'];
-        $password=$_POST ['password'];
+    public function loginSuccess()
+    {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
         $this->loadModel('loginModel');
 
         $this->view->ann = $this->model->readLogin($username, $password);
-        if($_SESSION['type']=='admin'){
+        if ($_SESSION['type'] == 'admin') {
             $this->view->render('homeView');
-        }
-        else if($_SESSION['type']=='lecture'){
+        } else if ($_SESSION['type'] == 'lecture') {
             $this->view->render('homeView');
         }
     }
 
-    public function logout(){
+    public function logout()
+    {
         session_start();
 
         $_SESSION = array();
 
         if (isset($_COOKIE[session_name()])) {
-            setcookie(session_name(), '' , time() -86400, '/');
+            setcookie(session_name(), '', time() - 86400, '/');
         }
 
         session_destroy();
@@ -52,15 +58,26 @@ class homeController extends controller{
         $this->view->render('loginView');
     }
 
-    public function attendanceReport(){
+    public function class()
+    {
+
+        $this->loadModel('classModel');
+        $this->view->class = $this->model->readClasses();
+        $this->view->render('classView');
+    }
+
+    public function attendanceReport()
+    {
         $this->view->render('attendanceReportView');
     }
 
-    public function studentDetails(){
+    public function studentDetails()
+    {
         $this->view->render('studentDetailsView');
     }
 
-    public function student(){
+    public function student()
+    {
         $this->view->render('studentView');
     }
 }
