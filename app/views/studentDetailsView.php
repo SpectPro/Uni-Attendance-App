@@ -40,7 +40,7 @@
           </div>
 
           <a
-            href="student"
+            href="logout"
             class="mb-4 w-100 pt-3 pb-3"
             style="text-decoration: none"
             onMouseOver="this.style.background='#d0e5db'"
