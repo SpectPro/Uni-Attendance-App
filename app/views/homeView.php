@@ -1,3 +1,10 @@
+
+<?php
+if (!isset($_SESSION['userId'])) {
+  header('location:/Uni-Attendance-App/public/homeController/login');
+  die;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
