@@ -7,12 +7,6 @@ if (!isset($_SESSION['userId'])) {
 
 ?>
 
-<?php
-while ($row = $this->attendanceReport->fetch_assoc()) {
-  print_r($row);
-}
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
