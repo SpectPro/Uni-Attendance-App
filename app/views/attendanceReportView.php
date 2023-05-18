@@ -21,14 +21,14 @@
         >
           <div class="mt-5 d-flex flex-column align-items-center w-100">
             <a
-              href="http://dsfs"
+              href="attendanceReport"
               class="w-100 pt-3 pb-3"
               style="text-decoration: none; background: #a6d7bf"
             >
               <img src="../../public/img/iocn_6.png" alt="Logo" class="img-fluid ps-3" />
             </a>
             <a
-              href="http://dsfs"
+              href="studentDetails"
               class="mb-4 w-100 pt-3 pb-3"
               style="text-decoration: none"
               onMouseOver="this.style.background='#d0e5db'"
