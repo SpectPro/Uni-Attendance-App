@@ -19,16 +19,16 @@ if (!isset($_SESSION['userId'])) {
 
 <body>
   <div class="d-flex">
-    <div class="bg-light" style="width: 5%; height: 100vh">
+    <div class="bg-light" style="width: 5%; height: 100vh; position: fixed; top: 0; left: 0;">
       <div class="d-flex flex-column flex-fill align-items-center align-content-center justify-content-evenly" style="width: 100%; height: 100vh">
         <a href="home" class="mb-4 w-100" style="text-decoration: none">
           <img src="../../public/img/logo-s.png" alt="Logo" class="img-fluid" />
         </a>
         <div class="mt-5 d-flex flex-column align-items-center w-100">
-          <a href="class" class="w-100 pt-3 pb-3" style="text-decoration: none; background: #a6d7bf">
+          <a href="class" class="w-100 pt-3 pb-3" style="text-decoration: none" onMouseOver="this.style.background='#d0e5db'" onmouseout="this.style.background='none'">
             <img src="../../public/img/iocn_6.png" alt="Logo" class="img-fluid ps-3" />
           </a>
-          <a href="studentDetails" class="mb-4 w-100 pt-3 pb-3" style="text-decoration: none" onMouseOver="this.style.background='#d0e5db'" onmouseout="this.style.background='none'">
+          <a href="studentDetails" class="mb-4 w-100 pt-3 pb-3" style="text-decoration: none; background: #a6d7bf">
             <img src="../../public/img/iocn_5.png" alt="Logo" class="img-fluid ps-2" />
           </a>
         </div>
@@ -38,33 +38,26 @@ if (!isset($_SESSION['userId'])) {
         </a>
       </div>
     </div>
-    <div class="d-flex justify-content-center align-items-center" style="width: 95%; height: 100vh; background-color: #cccfc7">
-      <div class="container text-center">
-        <div class="row align-items-start gap-4">
-          <div class="col-3 bg-light" style="border-radius: 15px; height: 250px">
-            <img src="../../public/img/profile.png" height="100px" width="100px" class="img-fluid mb-2 mt-3">
-            <h3 class="text-dark  ms-5 me-5">Ajantha Kumara</h3>
-            <button type="button" class="btn mt-3 btn-secondary px-5">View Details</button>
-          </div>
+    <div class="d-flex justify-content-center align-items-center " style="width: 100%;  background-color: #cccfc7">
+      <div class="container text-center mb-5 mt-5">
+        <div class="row align-items-start gap-5 ms-5">
+          <?php
+          if ($this->student->num_rows > 0) {
+            while ($row = $this->student->fetch_assoc()) { ?>
+              <div class="col-2 bg-light" style="border-radius: 15px; height: 250px">
+                <img src="../../public/img/profile.png" height="100px" width="100px" class="img-fluid mb-2 mt-3">
+                <h3 class="text-dark  ms-5 me-5"><?php echo $row["name"]; ?></h3>
+                <a href="student?id=<?php echo ($row["id"]) ?>&name=<?php echo ($row["name"]) ?>&department=<?php echo ($row["department"]) ?>&degree=<?php echo ($row["degree_program"]) ?>&mobile=<?php echo ($row["phone_num"]) ?>">
+                  <button action="student" type="button" class="btn mt-3 btn-secondary px-5">View Details</button>
+                </a>
 
-          <div class="col-3 bg-light" style="border-radius: 15px; height: 250px">
-            <img src="../../public/img/profile.png" height="100px" width="100px" class="img-fluid mb-2 mt-3">
-            <h3 class="text-dark  ms-5 me-5">Ajantha Kumara</h3>
-            <a href="student">
-              <button action="student" type="button" class="btn mt-3 btn-secondary px-5">View Details</button>
-            </a>
-          </div>
+              </div>
+          <?php
+            }
+          } else {
+          }
+          ?>
 
-          <div class="col-3 bg-light" style="border-radius: 15px; height: 250px">
-            <img src="../../public/img/profile.png" height="100px" width="100px" class="img-fluid mb-2 mt-3">
-            <h3 class="text-dark  ms-5 me-5">Ajantha Kumara</h3>
-            <button type="button" class="btn mt-3 btn-secondary px-5">View Details</button>
-          </div>
-          <div class="col-3 bg-light" style="border-radius: 15px; height: 250px">
-            <img src="../../public/img/profile.png" height="100px" width="100px" class="img-fluid mb-2 mt-3">
-            <h3 class="text-dark  ms-5 me-5">Ajantha Kumara</h3>
-            <button type="button" class="btn mt-3 btn-secondary px-5">View Details</button>
-          </div>
 
         </div>
       </div>

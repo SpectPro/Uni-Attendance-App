@@ -73,6 +73,8 @@ class homeController extends controller
 
     public function studentDetails()
     {
+        $this->loadModel('studentModel');
+        $this->view->student = $this->model->readStudents();
         $this->view->render('studentDetailsView');
     }
 

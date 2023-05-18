@@ -5,6 +5,7 @@ if (!isset($_SESSION['userId'])) {
   die;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,10 +25,10 @@ if (!isset($_SESSION['userId'])) {
           <img src="../../public/img/logo-s.png" alt="Logo" class="img-fluid" />
         </a>
         <div class="mt-5 d-flex flex-column align-items-center w-100">
-          <a href="class" class="w-100 pt-3 pb-3" style="text-decoration: none; background: #a6d7bf">
+          <a href="class" class="w-100 pt-3 pb-3" style="text-decoration: none" onMouseOver="this.style.background='#d0e5db'" onmouseout="this.style.background='none'">
             <img src="../../public/img/iocn_6.png" alt="Logo" class="img-fluid ps-3" />
           </a>
-          <a href="studentDetails" class="mb-4 w-100 pt-3 pb-3" style="text-decoration: none" onMouseOver="this.style.background='#d0e5db'" onmouseout="this.style.background='none'">
+          <a href="studentDetails" class="mb-4 w-100 pt-3 pb-3" style="text-decoration: none; background: #a6d7bf">
             <img src="../../public/img/iocn_5.png" alt="Logo" class="img-fluid ps-2" />
           </a>
         </div>
@@ -42,37 +43,33 @@ if (!isset($_SESSION['userId'])) {
         <div class="row align-items-start gap-4">
           <div class="col-3 bg-light d-flex align-items-center justify-content-evenly" style="border-radius: 15px; height: 400px">
             <img src="../../public/img/profile.png" height="200px" width="200px" class="img-fluid mb-2 mt-3">
-
           </div>
-
-
           <div class="col-8 bg-light " style="border-radius: 15px; ">
-
             <h3 class="text-dark my-5 ms-5 me-5">Ajantha Kumara</h3>
             <table class="table table-borderless mt-4 mb-5 px-5 mx-5 text-start">
               <thead>
                 <tr>
                   <th scope="col">ID Number :</th>
-                  <th scope="col">32323242</th>
+                  <th scope="col"><?php echo ($_GET['id']) ?></th>
 
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">Name :</th>
-                  <td>Mark</td>
+                  <td><?php echo ($_GET['name']) ?></td>
                 </tr>
                 <tr>
                   <th scope="row">Degree Program :</th>
-                  <td>Computer science</td>
+                  <td><?php echo ($_GET['degree']) ?></td>
                 </tr>
                 <tr>
                   <th scope="row">Department :</th>
-                  <td>IT</td>
+                  <td><?php echo ($_GET['department']) ?></td>
                 </tr>
                 <tr>
                   <th scope="row">Telephone Number :</th>
-                  <td>077 8547895</td>
+                  <td><?php echo ($_GET['mobile']) ?></td>
                 </tr>
 
               </tbody>
