@@ -36,9 +36,9 @@ class homeController extends controller
         $this->loadModel('loginModel');
 
         $this->view->ann = $this->model->readLogin($username, $password);
-        if ($_SESSION['type'] == 'admin') {
+        if ($_SESSION['type'] == 'Admin') {
             $this->view->render('homeView');
-        } else if ($_SESSION['type'] == 'lecture') {
+        } else if ($_SESSION['type'] == 'Lecture') {
             $this->view->render('homeView');
         }
     }
