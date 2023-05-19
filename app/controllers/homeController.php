@@ -17,6 +17,7 @@ class homeController extends controller
 
     public function home()
     {
+        session_start();
         $this->view->render('homeView');
     }
 
