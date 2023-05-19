@@ -59,7 +59,7 @@ class homeController extends controller
         }
 
         session_destroy();
-
+        $this->view->errorMsg = "";
         $this->view->render('loginView');
     }
 
