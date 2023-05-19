@@ -23,7 +23,7 @@ class loginModel extends model {
                     $_SESSION['userName'] = $user['user_name'];
                     $_SESSION['type'] = $user['type'];
                 } else {
-                    echo  'Invalid Username Password';
+                    // echo  'Invalid Username Password';
                     return false;
                 }
             } else {

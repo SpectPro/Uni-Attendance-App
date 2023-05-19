@@ -11,6 +11,14 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" 
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+    crossorigin="anonymous"></script>
+    <style>
+      .errorMsgLogin{
+        color: red;
+      }
+    </style>
   </head>
   <body>
     <div
@@ -41,6 +49,14 @@
               <h1>LOGIN</h1>
             </div>
           </div>
+
+          <div class="row mb-4">
+            <div class="col">
+              <center><span class="errorMsgLogin" id="errorMsg"><?php echo $this->errorMsg; ?></span></center>
+            
+            </div>
+          </div>
+
           <div class="row mb-4">
             <div class="col">
               <select
@@ -55,26 +71,30 @@
           </div>
           <div class="row mb-4">
             <div class="col">
-              <div class="input-group input-group-lg">
+              <div class="input-group input-group-lg" id ="nameId">
                 <input
+                id="form_name"
                   type="text"
                   name="username"
                   class="form-control"
                   placeholder="Username"
                 />
               </div>
+                <span class="error_form" id="name_error_message"></span>
             </div>
           </div>
-          <div class="row mb-2">
+          <div class="row mb-4">
             <div class="col">
-              <div class="input-group input-group-lg">
+              <div class="input-group input-group-lg" id ="passwordId">
                 <input
+                id="form_password"
                   type="password"
                   name="password"
                   class="form-control"
                   placeholder="Password"
                 />
               </div>
+                <span class="error_form" id="password_error_message"></span>
             </div>
           </div>
           <div class="row mb-4">
@@ -107,20 +127,21 @@
       integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
       crossorigin="anonymous"
     ></script>
-    <script>
-      // Form validation
-      // const form = document.querySelector(".form");
-      // form.addEventListener("submit", function (event) {
-      //   event.preventDefault();
-      //   const username = document.querySelector('input[type="text"]').value;
-      //   const password = document.querySelector('input[type="password"]').value;
-      //   if (username.trim() === "" || password.trim() === "") {
-      //     alert("Please enter a username and password.");
-      //   } else {
-      //     alert("Form submitted successfully!");
-      //     // Additional validation or form submission logic can be added here
-      //   }
-      // });
-    </script>
+    <!-- <script>
+      Form validation
+      const form = document.querySelector(".form");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const username = document.querySelector('input[type="text"]').value;
+        const password = document.querySelector('input[type="password"]').value;
+        if (username.trim() === "" || password.trim() === "") {
+          alert("Please enter a username and password.");
+        } else {
+          alert("Form submitted successfully!");
+          // Additional validation or form submission logic can be added here
+        }
+      });
+    </script> -->
+    <script type="text/javascript" src="../../public/js/login.js"></script>
   </body>
 </html>

@@ -23,6 +23,7 @@ class homeController extends controller
 
     public function login()
     {
+        $this->view->errorMsg = "";
         $this->view->render('loginView');
     }
 
@@ -35,12 +36,14 @@ class homeController extends controller
 
         $this->view->ann = $this->model->readLogin($username, $password);
         if(isset($_SESSION['type'])){
+            $this->view->errorMsg = "";
             if ($_SESSION['type'] == 'Admin') {
                 $this->view->render('homeView');
             } else if ($_SESSION['type'] == 'Lecture') {
                 $this->view->render('homeView');
             }
         }else{
+            $this->view->errorMsg = "Invalid Username Password";
             $this->view->render('loginView');
         }
     }
