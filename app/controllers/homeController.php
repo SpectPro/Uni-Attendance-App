@@ -17,11 +17,8 @@ class homeController extends controller
 
     public function home()
     {
-        $this->loadModel('homeModel');
-        $this->view->users = $this->model->readTable();
         $this->view->render('homeView');
     }
-
 
     public function login()
     {
@@ -36,10 +33,14 @@ class homeController extends controller
         $this->loadModel('loginModel');
 
         $this->view->ann = $this->model->readLogin($username, $password);
-        if ($_SESSION['type'] == 'Admin') {
-            $this->view->render('homeView');
-        } else if ($_SESSION['type'] == 'Lecture') {
-            $this->view->render('homeView');
+        if(isset($_SESSION['type'])){
+            if ($_SESSION['type'] == 'Admin') {
+                $this->view->render('homeView');
+            } else if ($_SESSION['type'] == 'Lecture') {
+                $this->view->render('homeView');
+            }
+        }else{
+            $this->view->render('loginView');
         }
     }
 
@@ -70,9 +71,7 @@ class homeController extends controller
     {
 
         $id = $_GET['id'];
-
         $this->loadModel('attendanceReportModel');
-
         $this->view->attendanceReport = $this->model->readAttendanceReport($id);
         $this->view->render('attendanceReportView');
     }

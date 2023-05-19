@@ -4,16 +4,13 @@ if (!isset($_SESSION['userId'])) {
   header('location:/Uni-Attendance-App/public/homeController/login');
   die;
 }
+ $count1 = $this->attendanceReport[1]->fetch_assoc();
+ $array1 = $count1;
+ $count1 = $array1["COUNT(id)"];
 
- $count = $this->attendanceReport[1]->fetch_assoc();
- $array = $count;
- $count1 = $array["COUNT(id)"];
- print_r($count1);
-
- $count = $this->attendanceReport[2]->fetch_assoc();
- $array = $count;
- $count2 = $array["late_student_count"];
- print_r($count2);
+ $count2 = $this->attendanceReport[2]->fetch_assoc();
+ $array2 = $count2;
+ $count2 = $array2["late_student_count"];
 
 
 ?>
@@ -26,7 +23,7 @@ if (!isset($_SESSION['userId'])) {
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login Page</title>
+  <title>Attendance Report Page</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
 </head>
 
